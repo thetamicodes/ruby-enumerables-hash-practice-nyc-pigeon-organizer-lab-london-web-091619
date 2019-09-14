@@ -26,11 +26,11 @@ pigeon_list = {}
       end 
     end 
   end 
-  x = pigeon_list.keys
-  data[:color].each do |bird_color, name|
-    name.each do |bird_name|
-      x.each do |item|
-        if bird_name === item
+  input = pigeon_list.keys
+  data[:color].each do |pigeon_color, name|
+    name.each do |pigeon_name|
+      input.each do |item|
+        if pigeon_name === item
           pigeon_list[item][:color] << bird_color.to_s
         end 
       end 
@@ -38,7 +38,7 @@ pigeon_list = {}
   end 
   data[:gender].each do |gender, type|
     type.each do |bird_name|
-      x.each do |item|
+      input.each do |item|
         if bird_name === item
           pigeon_list[item][:gender] << gender.to_s
         end 
@@ -47,7 +47,7 @@ pigeon_list = {}
   end 
   data[:lives].each do |location, name|
     name.each do |bird_name|
-      x.each do |item|
+      input.each do |item|
         if bird_name === item
           pigeon_list[item][:lives] << location
         end 
