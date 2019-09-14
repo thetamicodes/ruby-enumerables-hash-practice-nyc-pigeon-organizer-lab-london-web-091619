@@ -27,10 +27,10 @@ pigeon_list = {}
     end 
   end 
   input = pigeon_list.keys
-  data[:color].each do |pigeon_color, name|
-    name.each do |pigeon_name|
+  data[:color].each do |bird_color, name|
+    name.each do |bird_name|
       input.each do |item|
-        if pigeon_name === item
+        if bird_name === item
           pigeon_list[item][:color] << bird_color.to_s
         end 
       end 
