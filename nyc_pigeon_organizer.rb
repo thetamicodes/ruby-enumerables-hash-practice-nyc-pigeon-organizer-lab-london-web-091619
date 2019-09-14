@@ -54,11 +54,8 @@ pigeon_list = {}
       end 
     end 
   end 
-  
   return pigeon_list 
 end 
-
-nyc_pigeon_organizer(pigeon_data)
 
 
 
