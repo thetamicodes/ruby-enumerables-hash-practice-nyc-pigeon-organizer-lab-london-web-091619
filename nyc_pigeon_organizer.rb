@@ -1,44 +1,61 @@
-def nyc_pigeon_organizer (data)
-  final = {}
+pigeon_data = {
+  :color => {
+    :purple => ["Theo", "Peter Jr.", "Lucky"],
+    :grey => ["Theo", "Peter Jr.", "Ms. K"],
+    :white => ["Queenie", "Andrew", "Ms. K", "Alex"],
+    :brown => ["Queenie", "Alex"]
+  },
+  :gender => {
+    :male => ["Alex", "Theo", "Peter Jr.", "Andrew", "Lucky"],
+    :female => ["Queenie", "Ms. K"]
+  },
+  :lives => {
+    "Subway" => ["Theo", "Queenie"],
+    "Central Park" => ["Alex", "Ms. K", "Lucky"],
+    "Library" => ["Peter Jr."],
+    "City Hall" => ["Andrew"]
+  }
+}
 
-  data.each do |first_level, all_other|
-    all_other.each do |category, array|
-      array.each do |name|
-        final[name] = {:color => [], :gender => [], :lives => []}
+def nyc_pigeon_organizer(data)
+pigeon_list = {}
+  data.each do |pigeon_name, pigeon_info|
+    pigeon_info.each do |category, details|
+      details.each do |name|
+        pigeon_list[name] = {:color => [], :gender => [], :lives => []}
       end 
     end 
   end 
-  
-  x = final.keys
+  input = pigeon_list.keys
   data[:color].each do |bird_color, name|
     name.each do |bird_name|
-      x.each do |item|
+      input.each do |item|
         if bird_name === item
-          final[item][:color] << bird_color.to_s
+          pigeon_list[item][:color] << bird_color.to_s
         end 
       end 
     end 
   end 
-  
   data[:gender].each do |gender, type|
     type.each do |bird_name|
-      x.each do |item|
+      input.each do |item|
         if bird_name === item
-          final[item][:gender] << gender.to_s
+          pigeon_list[item][:gender] << gender.to_s
         end 
       end 
     end 
   end 
-  
   data[:lives].each do |location, name|
     name.each do |bird_name|
-      x.each do |item|
+      input.each do |item|
         if bird_name === item
-          final[item][:lives] << location
+          pigeon_list[item][:lives] << location.to_s
         end 
       end 
     end 
   end 
-  return final 
+  return pigeon_list 
 end 
+
+
 
