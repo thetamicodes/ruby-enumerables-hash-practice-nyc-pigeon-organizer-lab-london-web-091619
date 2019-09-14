@@ -49,7 +49,7 @@ pigeon_list = {}
     name.each do |bird_name|
       input.each do |item|
         if bird_name === item
-          pigeon_list[item][:lives] << location
+          pigeon_list[item][:lives] << location.to_s
         end 
       end 
     end 
